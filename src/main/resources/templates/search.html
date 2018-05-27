@@ -15,7 +15,13 @@
 
         <p>
             <span th:each="column : ${columns}">
-                <input
+                <input th:if="${checked}"
+                    type="radio"
+                    name="searchType"
+                    th:id="${column.key}"
+                    th:value="${column.key}"
+                    th:checked="${column.key == checked}"/>
+                <input th:unless="${checked}"
                         type="radio"
                         name="searchType"
                         th:id="${column.key}"
