@@ -25,7 +25,7 @@ public class SearchController extends TechJobsController {
     @RequestMapping(value = "results")
     public String search(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
 
-        ArrayList<HashMap<String, String>> jobs;
+        Iterable<HashMap<String, String>> jobs;
 
         if(searchType.contains("all")) {
             jobs = JobData.findByValue(searchTerm);
